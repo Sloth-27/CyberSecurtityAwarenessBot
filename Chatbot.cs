@@ -21,20 +21,20 @@ namespace CybersecurityAwarenessBot
         private void AskName()
         {
             Console.Write("What's your name? ");
-            userName = Console.ReadLine();
+            userName = Console.ReadLine() ?? string.Empty;
 
             while (string.IsNullOrWhiteSpace(userName))
             {
-                Console.Write("I didn't catch that — what should I call you? ");
-                userName = Console.ReadLine();
+            Console.Write("I didn't catch that — what should I call you? ");
+            userName = Console.ReadLine() ?? string.Empty;
             }
         }
         private void PlayGreeting()
 {
     try
     {
-                SoundPlayer player = new SoundPlayer("Assets/greeting.wav");
-                player.PlaySync();
+            SoundPlayer player = new SoundPlayer("Assets/greeting.wav");
+            player.PlaySync();
     }
     catch
     {
@@ -49,8 +49,8 @@ namespace CybersecurityAwarenessBot
 
             while (true)
             {
-                Console.Write($"{userName}:");
-                string input = Console.ReadLine();
+                   Console.Write($"{userName}:");
+                   string input = Console.ReadLine() ?? string.Empty;
 
                 if (string.IsNullOrWhiteSpace(input))
                 {
@@ -64,8 +64,8 @@ namespace CybersecurityAwarenessBot
                     break;
                 }
 
-                string response = GetResponse(input);
-                Console.WriteLine($"Bot: {response}");
+                    string response = GetResponse(input);
+                    Console.WriteLine($"Bot: {response}");
                 
             }
         }
