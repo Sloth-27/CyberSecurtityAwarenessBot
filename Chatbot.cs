@@ -10,12 +10,15 @@ namespace CybersecurityAwarenessBot
         public void Start()
         {
             PlayGreeting();
-            Console.WriteLine(AsciiArt.Logo);
-            Console.WriteLine("Welcome to the Cybersecurity Awareness Bot!");
+            WriteColored(AsciiArt.Logo, ConsoleColor.Cyan);
+            WriteColored(new string('=', 50), ConsoleColor.DarkCyan);
+            WriteColored("Welcome to the Cybersecurity Awareness Bot/chatapp", ConsoleColor.Green);
             AskName();
-            Console.WriteLine($"Nice to meet you, {userName}! Let's talk about staying safe online.");
-
+            WriteColored($"Nice to meet you, {userName}! Let's talk about staying safe online.", ConsoleColor.Green);
             RunConversationLoop();
+            
+            string response = GetResponse(input);
+            WriteColored($"Bot: {response}", ConsoleColor.Yellow);
         }
 
         private void AskName()
@@ -38,14 +41,14 @@ namespace CybersecurityAwarenessBot
     }
     catch
     {
-            Console.WriteLine("(Voice greeting unavailable)");
+            WriteColored("(Voice greeting unavailable)" , ConsoleColor.Red);
     }
 }
 
         private void RunConversationLoop()
         {
-            Console.WriteLine("You can ask me things like 'What is phishing?' or 'How do I create a strong password?");
-            Console.WriteLine("Type 'exit' to end the conversation.");
+            WriteColored("You can ask me things like 'What is phishing?' or 'How do I create a strong password?", ConsoleColor.Yellow);
+            WriteColored("Type 'exit' to end the conversation.", ConsoleColor.Yellow);
 
             while (true)
             {
@@ -88,11 +91,20 @@ namespace CybersecurityAwarenessBot
                 if (text.Contains("safe browsing") || text.Contains("browsing"))
                 return "Stick to HTTPS sites, avoid clicking unknown links, and keep your browser updated to stay safe online.";
 
-                 return "I didn't quite understand that. Could you rephrase?";
+                return "I didn't quite understand that. Could you rephrase?";
 }
         
+        private void WriteColored(string text, ConsoleColor color)
+        {
             
+        
+                 Console.ForegroundColor = color;
+                 Console.WriteLine(text);
+                 Console.ResetColor();
+        {
         }
     }
+    }
+}
 
     
