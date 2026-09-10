@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "sLqr4+G2ayE=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\otshe\\CyberSecurityAwarenessBot\\CyberSecurityAwarenessBot.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\otshe\\.nuget\\packages\\system.windows.extensions\\10.0.12\\system.windows.extensions.10.0.12.nupkg.sha512"
+  ],
+  "logs": []
+}
