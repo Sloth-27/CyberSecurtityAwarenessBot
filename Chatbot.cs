@@ -17,8 +17,6 @@ namespace CybersecurityAwarenessBot
             WriteColored($"Nice to meet you, {userName}! Let's talk about staying safe online.", ConsoleColor.Green);
             RunConversationLoop();
             
-            string response = GetResponse(input);
-            WriteColored($"Bot: {response}", ConsoleColor.Yellow);
         }
 
         private void AskName()
