@@ -7,4 +7,4 @@ A console-based chatbot that educates users on cybersecurity topics like phishin
 2. Run `dotnet run` in the project folder
 
 ## CI Status
-![CI passing](Assets/ci passing.png)
+![CI passing](Assets/ci-passing.png)
